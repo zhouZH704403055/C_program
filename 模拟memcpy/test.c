@@ -1,12 +1,13 @@
 #include<stdio.h>
+#include<assert.h>
 void* MyMemcpy(void* dst, const void* src, size_t count)
 {
-	void* ret = dst;
-	while (count--)
+	assert(dst);
+	assert(src);
+	char* ret = dst;
+	for (int i = 0; i < count; i++)
 	{
-		*(char*)dst = *(char*)src;
-		dst = (char*)dst + 1;
-		src = (char*)src + 1;
+			*((char*)dst)++ = *((char*)src)++;
 	}
 	return ret;
 }
