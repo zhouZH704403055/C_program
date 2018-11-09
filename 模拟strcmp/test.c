@@ -1,6 +1,8 @@
 #include<stdio.h>
+#include<assert.h>
 int MyStrcmp(const char* dst, const char* src)
 {
+	assert(dst);
 	while (*dst == *src)
 	{
 		if (*dst == '\0')
